@@ -13,12 +13,20 @@
 
 // global functions
 
-function getUserInput() = {
+function getUserInput() {
   let email = $("input[type='email']").val();
   let password = $("input[type='password']").val();
   let userName = $("input[type='text']").val();
   return email, password, userName;
 }
+
+//log user out on click of logout button
+  $(".logout").click(()=>{
+    firebase
+    .auth()
+    .signOut()
+  })
+
 
 
 //store current user
@@ -92,9 +100,9 @@ app.controller("LoginCtrl", function($scope) {
   $scope.loginUser = function() {
     let email = $("input[type='email']").val();
     let password = $("input[type='password']").val();
-    let userName = $("input[type='text']").val();
 
     //
+      console.log("email", email);
 
       firebase
       .auth()
@@ -106,7 +114,6 @@ app.controller("LoginCtrl", function($scope) {
       })
     }
 
-})
 })
 
 app.controller("ListCtrl", function($scope) {
