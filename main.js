@@ -53,6 +53,15 @@ app.config(($routeProvider, $locationProvider) => {
 
 app.controller("RegCtrl", function($scope) {
   $scope.userName = ""
+
+  //get user name
+  $("form").submit(()=>{
+    var email = $("input[type='email']").val();
+    var user = $("input[type='password']").val();
+    //
+
+  })
+
 })
 
 
@@ -61,7 +70,7 @@ app.controller("LoginCtrl", function($scope) {
 })
 
 app.controller("ListCtrl", function($scope) {
-  $scope.userName = ""
+  $scope.userName =
   $scope.notes =
 })
 
