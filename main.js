@@ -48,3 +48,21 @@ app.config($routeProvider, $locationProvider) => {
     redirectTo: "/register"
   })
 }
+
+
+app.controller("RegCtrl", function($scope) {
+  $scope.userName = ""
+})
+
+
+app.controller("LoginCtrl", function($scope) {
+  $scope.userName = ""
+})
+
+app.controller("ListCtrl", function($scope) {
+  $scope.userName = ""
+})
+
+app.controller("NewNoteCtrl", function($scope) {
+  $scope.userName = ""
+})
