@@ -11,11 +11,24 @@
   firebase.initializeApp(config);
 
 
+// global functions
+
+function getUserInput() = {
+  let email = $("input[type='email']").val();
+  let password = $("input[type='password']").val();
+  let userName = $("input[type='text']").val();
+  return email, password, userName;
+}
 
 
+//store current user
 
 
+function getCurrentUser() {
+  let currentUser = firebase.auth().currentUser;
+}
 
+firebase.auth().onAuthStateChanged(getCurrentUser);
 
 
 
@@ -51,22 +64,49 @@ app.config(($routeProvider, $locationProvider) => {
 });
 
 
-app.controller("RegCtrl", function($scope) {
-  $scope.userName = ""
+app.controller("RegCtrl", function($scope, $http) {
+
 
   //get user name
-  $("form").submit(()=>{
-    var email = $("input[type='email']").val();
-    var user = $("input[type='password']").val();
+  $scope.registerUser = function() {
+    let email = $("input[type='email']").val();
+    let password = $("input[type='password']").val();
+    let userName = $("input[type='text']").val();
+
     //
 
-  })
+      firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then((e)=>{
+        console.log(e)})
+      .catch((e)=>{
+        alert(e)
+      })
+    }
 
 })
 
 
 app.controller("LoginCtrl", function($scope) {
-  $scope.userName = ""
+  $scope.loginUser = function() {
+    let email = $("input[type='email']").val();
+    let password = $("input[type='password']").val();
+    let userName = $("input[type='text']").val();
+
+    //
+
+      firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((e)=>{
+        console.log(e)})
+      .catch((e)=>{
+        alert(e)
+      })
+    }
+
+})
 })
 
 app.controller("ListCtrl", function($scope) {
