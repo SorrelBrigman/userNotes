@@ -7,6 +7,7 @@
     storageBucket: "classprojectusernotes.appspot.com",
     messagingSenderId: "611152019166"
   };
+
   firebase.initializeApp(config);
 
 
@@ -22,32 +23,32 @@
 
 
 
-var app = angular.module("noteApp", ["ngRoute"])
+const app = angular.module("noteApp", ["ngRoute"]);
 
-app.config($routeProvider, $locationProvider) => {
+app.config(($routeProvider, $locationProvider) => {
   $locationProvider.hashPrefix("");
 
   $routeProvider
   .when("/register", {
-    controller = "RegCtrl",
-    templateUrl = "partials/reg.html"
+    controller : "RegCtrl",
+    templateUrl : "partials/reg.html"
   })
   .when("/login", {
-    controller = "LoginCtrl",
-    templateUrl = "partials/login.html"
+    controller : "LoginCtrl",
+    templateUrl : "partials/login.html"
   })
   .when("/notes", {
-    controller = "ListCtrl",
-    templateUrl = "partials/list.html"
+    controller : "ListCtrl",
+    templateUrl : "partials/list.html"
   })
   .when("/new", {
-    controller = "NewNoteCtrl",
-    templateUrl = "partials/newnote.html"
+    controller : "NewNoteCtrl",
+    templateUrl : "partials/newnote.html"
   })
   .otherwise({
     redirectTo: "/register"
   })
-}
+});
 
 
 app.controller("RegCtrl", function($scope) {
@@ -61,6 +62,7 @@ app.controller("LoginCtrl", function($scope) {
 
 app.controller("ListCtrl", function($scope) {
   $scope.userName = ""
+  $scope.notes =
 })
 
 app.controller("NewNoteCtrl", function($scope) {
