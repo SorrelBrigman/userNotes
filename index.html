@@ -11,6 +11,17 @@
 
   <body ng-app="noteApp" class="container">
 
+   <!--  nav bar -->
+    <div class="row navbar">
+      <ul class="nav nav-pills col-md-12">
+        <li role="presentation" class="active"><a href="#">LogIn</a></li>
+        <li role="presentation"><a href="#/notes">My Notes</a></li>
+        <li role="presentation"><a href="#/new">Create New Note</a></li>
+        <li role="presentation"><a href="#/login">LogOut</a></li>
+      </ul>
+    </div>
+
+
     <!-- angular view div -->
     <div ng-view></div>
 

@@ -70,8 +70,8 @@ app.controller("LoginCtrl", function($scope) {
 })
 
 app.controller("ListCtrl", function($scope) {
-  $scope.userName =
-  $scope.notes =
+  $scope.userName = ""
+  $scope.notes = ""
 })
 
 app.controller("NewNoteCtrl", function($scope) {
