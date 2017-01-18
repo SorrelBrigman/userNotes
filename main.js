@@ -31,9 +31,10 @@ function getUserInput() {
 
 //store current user
 
+var currentUser;
 
 function getCurrentUser() {
-  let currentUser = firebase.auth().currentUser;
+  currentUser = firebase.auth().currentUser;
 }
 
 firebase.auth().onAuthStateChanged(getCurrentUser);
@@ -121,6 +122,16 @@ app.controller("ListCtrl", function($scope) {
   $scope.notes = ""
 })
 
-app.controller("NewNoteCtrl", function($scope) {
-  $scope.userName = ""
+app.controller("NewNoteCtrl", function($scope, $http) {
+  $scope.saveNote = function() {
+    let newNote = $scope.newNote;
+    console.log($scope.newNote)
+    $http.post(`https://classprojectusernotes.firebaseio.com/${currentUser.uid}/notes.json`, newNote)
+    .then((e)=>{
+      console.log("success, new note saved", e)
+    })
+    .catch((e)=>{
+      alert(e)
+    })
+  }
 })
