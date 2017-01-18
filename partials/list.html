@@ -4,7 +4,11 @@
   <h1>My Notes</h1>
   <div ng-repeat="myNote in notes | filter: searchNotes" class="notecard">
     <h3>Note Number {{myNote.number}}</h3>
-    <p>{{myNote}}</p>
+    <p>
+      {{myNote}}
+      <button>Delete</button>
+    </p>
+
   </div>
 
 </div>
