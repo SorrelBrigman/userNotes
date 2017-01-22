@@ -1,0 +1,38 @@
+/*************
+
+Reg Page
+
+**************/
+
+
+
+
+.regform input {
+  display: block;
+}
+
+
+
+/*************
+
+Login Page
+
+**************/
+
+.loginform input {
+  display: block;
+}
+
+
+
+
+
+/*************
+
+New Note Page
+
+**************/
+
+.newNoteSubmit {
+  display: block;
+}

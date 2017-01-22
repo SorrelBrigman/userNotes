@@ -1,0 +1,14 @@
+<div class="row">
+  <label>Search Notes:</label>
+  <input  class="col-md-3" type="text" ng-model="searchNotes">
+  <h1>My Notes</h1>
+  <div ng-repeat="myNote in notes | filter: searchNotes" class="notecard">
+    <h3>Note Number {{myNote.number}}</h3>
+    <p>
+      {{myNote}}
+      <button>Delete</button>
+    </p>
+
+  </div>
+
+</div>

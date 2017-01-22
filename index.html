@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>User Notes</title>
+
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+  </head>
+
+  <body ng-app="noteApp" class="container">
+
+   <!--  nav bar -->
+    <div class="row navbar">
+      <ul class="nav nav-pills col-md-12">
+        <li role="presentation" class="active"><a href="#/login">LogIn</a></li>
+        <li role="presentation"><a href="#/register">Create Account</a></li>
+        <li role="presentation"><a href="#/notes">My Notes</a></li>
+        <li role="presentation"><a href="#/new">Create New Note</a></li>
+        <li role="presentation"><a href="#/login" class="logout">LogOut</a></li>
+      </ul>
+    </div>
+
+
+    <!-- angular view div -->
+    <div ng-view></div>
+
+    <!-- script tags -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="app/main.js"></script>
+    <script src="app/config.js"></script>
+    <script src="app/controllers/list.js"></script>
+    <script src="app/controllers/login.js"></script>
+    <script src="app/controllers/newnote.js"></script>
+    <script src="app/controllers/register.js"></script>
+
+  </body>
+</html>
